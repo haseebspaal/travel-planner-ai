@@ -136,7 +136,7 @@ const CurrencySelector = ({planId}: {planId: string}) => {
           <Button
             type="submit"
             disabled={isSending || preferredCurrency === undefined}
-            className={cn("text-white hover:text-white bg-blue-500 hover:bg-blue-700")}
+            className={cn("text-white hover:text-white bg-[#6D5FFD] hover:bg-[#6D5FFD9A]")}
           >
             {isSending ? (
               <div className="flex justify-center items-center gap-2">

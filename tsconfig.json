@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext", // Use "esnext" for modern JavaScript features
     "lib": [
       "dom",
       "dom.iterable",
@@ -11,11 +11,11 @@
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "module": "esnext", // Ensure modern module support
+    "moduleResolution": "node", // Standard Node.js module resolution
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "preserve", // Use the new JSX transform for React 17+
     "incremental": true,
     "plugins": [
       {
@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "components/home/PublicPlans.tsx"  ],
   "exclude": [
     "node_modules"
   ]

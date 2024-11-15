@@ -28,7 +28,7 @@ const InviteEmail = ({inviteLink, projectName}: {inviteLink: string; projectName
           <Container className="border border-solid border-[#eaeaea] rounded my-[140px] mx-auto p-[20px]">
             <Section className="mt-[32px]">
               <Img
-                src={`https://travelplannerai.online/tarvelplannerai-logo.png`}
+                src={`https://travelplannerai.online/tarvelplannerai-logo.svg`}
                 alt="Travel Planner AI logo"
                 width={160}
                 height={48}

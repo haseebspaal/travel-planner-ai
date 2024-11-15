@@ -1,17 +1,18 @@
 "use client";
 
-import {Button} from "@/components/ui/button";
-import {useEffect, useRef, useState} from "react";
-import {AiOutlineClose, AiOutlineMenu} from "react-icons/ai";
+import { Button } from "@/components/ui/button";
+import { useEffect, useRef, useState } from "react";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Link from "next/link";
-import {cn} from "@/lib/utils";
-import {useParams} from "next/navigation";
+import { cn } from "@/lib/utils";
+import { useParams } from "next/navigation";
 import MenuItems from "@/components/home/MenuItems";
+import Image from "next/image";
 
 const MobileMenu = () => {
   const [open, setOpen] = useState(false);
   const asideRef = useRef<HTMLDivElement>(null);
-  const {planId} = useParams<{planId: string}>();
+  const { planId } = useParams<{ planId: string }>();
 
   const handleClickOutside = (event: MouseEvent) => {
     if (asideRef.current && !asideRef.current.contains(event.target as Node)) {
@@ -44,24 +45,17 @@ const MobileMenu = () => {
           "flex flex-col gap-2 min-h-[100svh]"
         )}
       >
-        <div className="flex justify-between p-2">
+        <div className="flex justify-between items-center p-2">
           <Link href="/">
-            <div
-              className="flex flex-col leading-5
-                             font-bold text-md p-1"
-            >
-              <span>Travel</span>
-              <span>
-                Planner
-                <span className="text-blue-500 ml-0.5">AI</span>
-              </span>
+            <div className="flex gap-1 justify-center items-center">
+              <Image className="w-[150px]" src='/logo.svg' width={100} height={100} quality={100} alt="logo" priority />
             </div>
           </Link>
           <Button
             aria-label="close menu"
             onClick={() => setOpen(false)}
             variant="link"
-            className="text-xl"
+            className="text-xl mt-4"
           >
             <AiOutlineClose />
           </Button>

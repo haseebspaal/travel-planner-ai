@@ -37,6 +37,7 @@ export const navlinks = [
   {text: "How it works", id: "how-it-works"},
   {text: "Community Plans", id: "public-plans"},
   {text: "Pricing", id: "pricing"},
+  {text: "Dashboard", id: "dashboard"},
 ];
 
 export const features = [

@@ -1,5 +1,5 @@
 import type {Metadata} from "next";
-import {Montserrat_Alternates} from "next/font/google";
+import {Poppins} from "next/font/google";
 import {Analytics} from "@vercel/analytics/react";
 import ConvexClientProvider from "@/app/ConvexClientProvider";
 import {ThemeProvider} from "@/contexts/ThemeProvider";
@@ -9,7 +9,7 @@ import {Toaster} from "@/components/ui/toaster";
 
 import "./globals.css";
 
-const inter = Montserrat_Alternates({weight: "500", subsets: ["cyrillic"]});
+const inter = Poppins({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.travelplannerai.online"),

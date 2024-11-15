@@ -9,12 +9,12 @@ const GeneratePlanButton = () => {
       aria-label="generate plan"
       onClick={openSignInPopupOrDirect}
       variant="default"
-      className="bg-blue-500 text-white
-                 hover:bg-blue-700
-                  text-sm
+      className="bg-[#6D5FFD] text-white
+                 hover:bg-[#111]
+                  text-sm px-6
                   font-semibold rounded-3xl"
     >
-      {isAuthenticated ? "Go to Dashboard" : "Try Now - 1 Free Credits"}
+      {isAuthenticated ? "Go to Dashboard" : "Get Started"}
     </Button>
   );
 };

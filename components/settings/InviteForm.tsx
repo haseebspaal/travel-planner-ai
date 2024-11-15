@@ -111,7 +111,7 @@ const InviteForm = ({planId}: {planId: string}) => {
           variant="outline"
           size="sm"
           disabled={sendingInvite}
-          className={cn("text-white hover:text-white bg-blue-500 hover:bg-blue-700")}
+          className={cn("text-white hover:text-white bg-[#6D5FFD] hover:bg-[#6D5FFD9A]")}
         >
           {sendingInvite ? (
             <div className="flex justify-center items-center gap-2">

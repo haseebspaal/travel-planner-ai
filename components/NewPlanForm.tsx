@@ -227,7 +227,7 @@ const NewPlanForm = ({closeModal}: {closeModal: Dispatch<SetStateAction<boolean>
             aria-label="generate plan"
             type="submit"
             disabled={pendingEmptyPlan || pendingAIPlan || !form.formState.isValid}
-            className="bg-blue-500 text-white hover:bg-blue-600 w-full"
+            className="bg-[#6D5FFD] text-white hover:bg-[#6D5FFD9A] w-full"
           >
             {pendingEmptyPlan ? (
               <div className="flex gap-1 justify-center items-center">

@@ -45,7 +45,7 @@ const DrawerWithDialog = ({shouldOpenForCreatePlan = false}) => {
           aria-label={`open dialog button for ${btnText}`}
           variant={`${!shouldOpenForCreatePlan ? "link" : "default"}`}
           className={`${
-            shouldOpenForCreatePlan && "bg-blue-500  hover:bg-blue-600 text-white flex gap-1"
+            shouldOpenForCreatePlan && "bg-[#6D5FFD]  hover:bg-blue-600 text-white flex gap-1"
           }`}
           onClick={() => {
             setOpen(true);
@@ -68,7 +68,7 @@ const DrawerWithDialog = ({shouldOpenForCreatePlan = false}) => {
           variant="outline"
           aria-label={`open drawer for ${btnText}`}
           className={`${
-            shouldOpenForCreatePlan && "bg-blue-500 text-white hover:bg-blue-600 flex gap-1"
+            shouldOpenForCreatePlan && "bg-[#6D5FFD] text-white hover:bg-blue-600 flex gap-1"
           }`}
         >
           {shouldOpenForCreatePlan && <Backpack className="h-4 w-4" />}
@@ -118,7 +118,7 @@ const CreditContent = ({
       <Link
         className={cn(
           buttonVariants({variant: "default"}),
-          "bg-blue-500 text-white hover:bg-blue-700",
+          "bg-[#6D5FFD] text-white hover:bg-[#6D5FFD9A]",
           "flex gap-1 justify-center items-center mt-2 mb-1"
         )}
         href={`${process.env.NEXT_PUBLIC_RAZORPAY_PAYMENT_PAGE_URL}${

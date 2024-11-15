@@ -59,7 +59,7 @@ const EditText = ({content, toggleEditMode, updateContent}: EditTextProps) => {
             type="submit"
             variant="outline"
             size="sm"
-            className={cn("text-white hover:text-white bg-blue-500 hover:bg-blue-700")}
+            className={cn("text-white hover:text-white bg-[#6D5FFD] hover:bg-[#6D5FFD9A]")}
           >
             Save
           </Button>

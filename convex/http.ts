@@ -69,65 +69,50 @@ async function validateRequest(
   return evt as unknown as WebhookEvent;
 }
 
-// http.route({
-//   path: "/stripe",
-//   method: "POST",
-//   handler: httpAction(async (ctx, request) => {
-//     // Getting the stripe-signature header
-//     const signature: string = request.headers.get("stripe-signature") as string;
-//     // Calling the action that will perform our fulfillment
-//     const result = await ctx.runAction(internal.stripe.fulfill, {
-//       signature,
-//       payload: await request.text(),
-//     });
-
-//     if (result.success) {
-//       // We make sure to confirm the successful processing
-//       // so that Stripe can stop sending us the confirmation
-//       // of this payment.
-//       return new Response(null, {
-//         status: 200,
-//       });
-//     } else {
-//       // If something goes wrong Stripe will continue repeating
-//       // the same webhook request until we confirm it.
-//       return new Response("Webhook Error", {
-//         status: 400,
-//       });
-//     }
-//   }),
-// });
-
 http.route({
-  path: "/razorpay",
+  path: "/stripe",
   method: "POST",
   handler: httpAction(async (ctx, request) => {
-    const signature: string = request.headers.get("X-Razorpay-Signature") as string;
-    const body = await request.text();
-
-    // Calling the action that will perform our fulfillment
-    const result = await ctx.runAction(internal.razorpay.handleRazorPayWebhook, {
+    const signature: string = request.headers.get("stripe-signature") as string;
+    const result = await ctx.runAction(internal.stripe.fulfill, {
       signature,
-      body: body,
+      payload: await request.text(),
     });
 
     if (result.success) {
-      // We make sure to confirm the successful processing
-      // so that Razorpay can stop sending us the confirmation
-      // of this payment.
       return new Response(null, {
         status: 200,
       });
     } else {
-      // If something goes wrong Stripe will continue repeating
-      // the same webhook request until we confirm it.
       return new Response("Webhook Error", {
         status: 400,
       });
     }
-  })
+  }),
 });
 
+// http.route({
+//   path: "/razorpay",
+//   method: "POST",
+//   handler: httpAction(async (ctx, request) => {
+//     const signature: string = request.headers.get("X-Razorpay-Signature") as string;
+//     const body = await request.text();
 
+//     const result = await ctx.runAction(internal.razorpay.handleRazorPayWebhook, {
+//       signature,
+//       body: body,
+//     });
+
+//     if (result.success) {
+//       return new Response(null, {
+//         status: 200,
+//       });
+//     } else {
+//       return new Response("Webhook Error", {
+//         status: 400,
+//       });
+//     }
+//   })
+// });
 
 export default http;

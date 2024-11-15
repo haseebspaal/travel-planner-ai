@@ -86,7 +86,23 @@ export const updateDisplayName = mutation({
   },
 })
 
-export const updateUserCredits = async (ctx: MutationCtx, email: string, amount: number) => {
+// export const updateUserCredits = async (ctx: MutationCtx, email: string, amount: number) => {
+//   const creditsToUpdate = (amount / 100 / 80) * 5;
+//   const user_object = await ctx.db
+//     .query("users")
+//     .withIndex("by_email", (q) => q.eq("email", email))
+//     .unique();
+
+//   if (user_object != null)
+//     await ctx.db.patch(user_object._id, { credits: (user_object?.credits ?? 0) + creditsToUpdate });
+// };
+
+export const updateUserCredits = async (
+  ctx: MutationCtx,
+  email: string,
+  amount: number,
+  userId: string
+) => {
   const creditsToUpdate = (amount / 100 / 80) * 5;
   const user_object = await ctx.db
     .query("users")
@@ -94,7 +110,9 @@ export const updateUserCredits = async (ctx: MutationCtx, email: string, amount:
     .unique();
 
   if (user_object != null)
-    await ctx.db.patch(user_object._id, { credits: (user_object?.credits ?? 0) + creditsToUpdate });
+    await ctx.db.patch(user_object._id, {
+      credits: (user_object?.credits ?? 0) + creditsToUpdate,
+    });
 };
 
 // Helpers

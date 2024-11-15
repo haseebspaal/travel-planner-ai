@@ -59,6 +59,8 @@ export default defineSchema({
   }).index("by_clerk_id", ["userId"])
     .index("by_email", ["email"]),
   payments: defineTable({
+    userId: v.any(),
+    stripeId: v.string(),
     paymentId: v.string(),
     email: v.string(),
     phone: v.string(),

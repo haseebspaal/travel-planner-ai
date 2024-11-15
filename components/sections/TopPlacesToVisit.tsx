@@ -179,7 +179,7 @@ export const SkeletonForTopPlacesToVisit = ({isMaps = false}: {isMaps?: boolean}
       {isMaps ? (
         <div className="flex gap-2 justify-center items-center">
           <Loading />
-          <p className="font-bold text-blue-500">Loading Maps</p>
+          <p className="font-bold text-[#6D5FFD]">Loading Maps</p>
         </div>
       ) : (
         <>
